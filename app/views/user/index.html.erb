@@ -1,0 +1,20 @@
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+
+<h2>Student Scoreboard</h2>
+
+<table style="width:100%">
+  <tr>
+    <th>Students</th>
+  </tr>
+  <%@students.each do |student|%>
+  <tr>
+    <td><%=student.first_name%></td>
+    <td><%= link_to "View Result", view_result_path(user_id: student.id) %></td>
+  </tr>
+  <%end%>
+
+</table>

@@ -1,0 +1,8 @@
+<h2>Create Exam</h2>
+
+<%= form_tag exams_create_exam_path, method: :post do %>
+  <%= label_tag "Question Paper:" %>
+  <%= text_field_tag :question_paper %><br><br>
+
+  <%= submit_tag("Create Exam") %>
+<%end%>

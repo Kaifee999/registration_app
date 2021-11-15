@@ -1,0 +1,11 @@
+<h3>Submit Answer</h3>
+
+<%= form_tag create_student_answer_path, method: :post do %>
+  <%= label_tag "Answer:" %>
+  <%= text_field_tag :answer %><br><br>
+  <%= hidden_field_tag(:exam_id, @exam_id) %>
+  <%= hidden_field_tag(:question_id, @question_id) %>
+  <%= hidden_field_tag(:user_id, @user_id) %>
+
+   <%= submit_tag("Submit Answer") %>
+<%end%>

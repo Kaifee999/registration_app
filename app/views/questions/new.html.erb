@@ -1,0 +1,20 @@
+
+<h2>Add Question</h2>
+
+<%= form_tag  create_question_path, method: :post do %>
+  <%= label_tag "Question:" %>
+  <%= text_field_tag :question %><br><br>
+  <%= label_tag "First Option:" %>
+  <%= text_field_tag :first_option %><br><br>
+  <%= label_tag "Second Option:" %>
+  <%= text_field_tag :second_option %><br><br>
+  <%= label_tag "Third Option:" %>
+  <%= text_field_tag :third_option %><br><br>
+  <%= label_tag "Fourth Option:" %>
+  <%= text_field_tag :fourth_option %><br><br>
+  <%= label_tag "Correct Option:" %>
+  <%= text_field_tag :correct_option %><br><br>
+
+   <%= submit_tag("Save") %>
+<%end%>
+

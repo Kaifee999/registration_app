@@ -1,0 +1,37 @@
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+
+table {
+  width: 100%;
+}
+</style>
+<h2>Take Exam</h2>
+
+<table>
+  <tr>
+    <th>Question</th>
+    <th>first_option</th>
+    <th>Second_option</th>
+    <th>Third_option</th>
+    <th>Fourth_option</th>
+    <th>Answer Here</th>
+  </tr>
+  <%@questions.each do |question|%>
+  <tr>
+    <td><%=question.question%></td>
+    <td><%=question.first_option%></td>
+    <td><%=question.second_option%></td>
+    <td><%=question.third_option%></td>
+    <td><%=question.fourth_option%></td>
+    <% if StudentAnswer.where(exam_id: @exam.id, user_id: current_user.id, question_id: question.id).present? %>
+    <td>Submitted</td>
+    <%else%>
+    <td><%= link_to "Click here to Submit Answer", new_student_answer_path(exam_id: @exam.id, question_id: question.id, user_id: current_user.id) %></td>
+    <%end%>
+  </tr>
+  <%end%>
+</table>
+
+      

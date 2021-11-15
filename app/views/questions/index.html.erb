@@ -1,0 +1,20 @@
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+
+table {
+  width: 100%;
+}
+</style>
+
+<table>
+  <tr>
+    <th>Question List</th>
+  </tr>
+  <%@questions.each do |question|%>
+  <tr>
+    <td><%=question.question%></td>
+  </tr>
+  <%end%>
+</table>

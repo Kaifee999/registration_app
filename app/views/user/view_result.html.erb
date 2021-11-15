@@ -1,0 +1,20 @@
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+
+<h2>Result</h2>
+<table style="width:100%">
+  <tr>
+    <th>Exams</th>
+    <th>Score</th>
+  </tr>
+  <%@exams.each do |exam|%>
+  <tr>
+    <td><%=exam.question_paper%></td>>
+    <td><%=exam.marks(@user.id)%>/<%=exam.total_score%></td>
+  </tr>
+  <%end%>
+
+</table>
